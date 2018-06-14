@@ -52,9 +52,8 @@ class DateTimeInputComponent extends Component {
             {...options}
             ref={(node) => { this.picker = node; }}
             TextFieldComponent={TextFieldComponent}
-            value={input.value}
+            value={input.value ? input.value : null}
             onChange={date => this.onChange(date)}
-            invalidLabel=""
           />
         </MuiPickersUtilsProvider>
       </div>

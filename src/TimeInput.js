@@ -75,7 +75,15 @@ TimeInputComponent.propTypes = {
 };
 
 TimeInputComponent.defaultProps = {
+  input: {},
+  isRequired: 'false',
+  label: '',
+  meta: { touched: false, error: false },
   options: {},
+  resource: '',
+  source: '',
+  labelTime: '',
+  className: '',
 };
 
 export default addField(TimeInputComponent);

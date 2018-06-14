@@ -1,6 +1,6 @@
 {
   "name": "react-admin-date-inputs",
-  "version": "1.0.9",
+  "version": "1.0.10",
   "description": "react-admin-date-inputs",
   "main": "lib/index.js",
   "author": "vascofg",
@@ -48,8 +48,8 @@
     "ra-core": "^2.0.2"
   },
   "dependencies": {
-    "date-fns": "~2.0.0-alpha.7",
-    "material-ui-pickers": "~1.0.0-rc.10",
-    "@material-ui/core": "~1.0.0-rc.0"
+    "date-fns": "2.0.0-alpha.7",
+    "material-ui-pickers": "1.0.0-rc.10",
+    "@material-ui/core": "1.0.0-rc.0"
   }
 }

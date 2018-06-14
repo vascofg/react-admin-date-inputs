@@ -10,6 +10,12 @@ npm install react-admin-date-inputs --save
 
 ## Usage
 
+You have to include an icon font to display the icons on the picker. This is mentioned on the bottom of the [material-ui-pickers installation page](https://material-ui-pickers.firebaseapp.com/installation).
+
+```html
+// on index.html
+<link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
+```
 
 ```jsx
 import React from 'react';
@@ -33,7 +39,6 @@ export const NewsEdit = (props) => (
     </TabbedForm>
   </Edit>
 );
-
 
 ```
 

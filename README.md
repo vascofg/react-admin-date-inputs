@@ -2,6 +2,8 @@
 
 \<DateInput>, \<TimeInput> and \<DateTimeInput> components for [React-Admin](https://github.com/marmelab/react-admin).
 
+![date-time-picker.gif](date-time-picker.gif)
+
 ## Installation
 
 ```

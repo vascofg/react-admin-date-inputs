@@ -1,6 +1,5 @@
 import React, { Component } from 'react';
 import PropTypes from 'prop-types';
-import TextField from '@material-ui/core/TextField';
 import { addField, FieldTitle } from 'ra-core';
 import { DateTimePicker } from 'material-ui-pickers';
 import DateFnsUtils from 'material-ui-pickers/utils/date-fns-utils';
@@ -12,46 +11,31 @@ class DateTimeInputComponent extends Component {
     this.props.input.onBlur();
   }
 
-  openPicker() {
-    this.picker.open();
-  }
-
   render() {
     const {
       input,
-      isRequired,
-      label,
-      meta: { touched, error },
       options,
+      label,
       source,
       resource,
+      isRequired,
       className,
     } = this.props;
-
-    const TextFieldComponent = ({ value }) => (<TextField
-      value={value}
-      margin="normal"
-      label={
-        <FieldTitle
-          label={label}
-          source={source}
-          resource={resource}
-          isRequired={isRequired}
-        />
-            }
-      error={!!(touched && error)}
-      helperText={touched && error}
-      onClick={() => this.openPicker()}
-      className={className}
-    />);
 
     return (
       <div className="picker">
         <MuiPickersUtilsProvider utils={DateFnsUtils}>
           <DateTimePicker
             {...options}
+            label={<FieldTitle
+              label={label}
+              source={source}
+              resource={resource}
+              isRequired={isRequired}
+            />}
+            margin="normal"
             ref={(node) => { this.picker = node; }}
-            TextFieldComponent={TextFieldComponent}
+            className={className}
             value={input.value ? input.value : null}
             onChange={date => this.onChange(date)}
           />

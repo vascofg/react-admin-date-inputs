@@ -20,7 +20,9 @@ class TimeInputComponent extends Component {
       resource,
       isRequired,
       className,
+      meta,
     } = this.props;
+    const { touched, error } = meta;
 
     return (
       <div className="picker">
@@ -34,6 +36,8 @@ class TimeInputComponent extends Component {
               isRequired={isRequired}
             />}
             margin="normal"
+            error={!!(touched && error)}
+            helperText={touched && error}
             ref={(node) => { this.picker = node; }}
             className={className}
             value={input.value ? input.value : null}

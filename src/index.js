@@ -1,7 +1,81 @@
-const DateInputComponent = require('./DateInput');
-const TimeInputComponent = require('./TimeInput');
-const DateTimeInputComponent = require('./DateTimeInput');
+import React, { Component } from 'react';
+import PropTypes from 'prop-types';
+import { addField, FieldTitle } from 'ra-core';
+import { DatePicker, TimePicker, DateTimePicker } from 'material-ui-pickers';
+import DateFnsUtils from 'material-ui-pickers/utils/date-fns-utils';
+import MuiPickersUtilsProvider from 'material-ui-pickers/utils/MuiPickersUtilsProvider';
 
-export const DateInput = DateInputComponent;
-export const TimeInput = TimeInputComponent;
-export const DateTimeInput = DateTimeInputComponent;
+const makePicker = (PickerComponent) => {
+  class _makePicker extends Component {
+    onChange(date) {
+      this.props.input.onChange(date);
+      this.props.input.onBlur();
+    }
+
+    render() {
+      const {
+        input,
+        options,
+        label,
+        source,
+        resource,
+        isRequired,
+        className,
+        meta,
+      } = this.props;
+
+      const { touched, error } = meta;
+
+      return (
+        <div className="picker">
+          <MuiPickersUtilsProvider utils={DateFnsUtils}>
+            <PickerComponent
+              {...options}
+              label={<FieldTitle
+                label={label}
+                source={source}
+                resource={resource}
+                isRequired={isRequired}
+              />}
+              margin="normal"
+              error={!!(touched && error)}
+              helperText={touched && error}
+              ref={(node) => { this.picker = node; }}
+              className={className}
+              value={input.value ? input.value : null}
+              onChange={date => this.onChange(date)}
+            />
+          </MuiPickersUtilsProvider>
+        </div>
+      );
+    }
+  }
+  _makePicker.propTypes = {
+    input: PropTypes.object,
+    isRequired: PropTypes.bool,
+    label: PropTypes.string,
+    meta: PropTypes.object,
+    options: PropTypes.object,
+    resource: PropTypes.string,
+    source: PropTypes.string,
+    labelTime: PropTypes.string,
+    className: PropTypes.string,
+  };
+
+  _makePicker.defaultProps = {
+    input: {},
+    isRequired: 'false',
+    label: '',
+    meta: { touched: false, error: false },
+    options: {},
+    resource: '',
+    source: '',
+    labelTime: '',
+    className: '',
+  };
+  return _makePicker;
+};
+
+export const DateInput = addField(makePicker(DatePicker));
+export const TimeInput = addField(makePicker(TimePicker));
+export const DateTimeInput = addField(makePicker(DateTimePicker));

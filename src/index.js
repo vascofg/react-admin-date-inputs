@@ -16,6 +16,7 @@ const makePicker = (PickerComponent) => {
       const {
         input,
         options,
+        locale,
         label,
         source,
         resource,
@@ -28,7 +29,7 @@ const makePicker = (PickerComponent) => {
 
       return (
         <div className="picker">
-          <MuiPickersUtilsProvider utils={DateFnsUtils}>
+          <MuiPickersUtilsProvider utils={DateFnsUtils} locale={locale}>
             <PickerComponent
               {...options}
               label={<FieldTitle
@@ -60,6 +61,7 @@ const makePicker = (PickerComponent) => {
     source: PropTypes.string,
     labelTime: PropTypes.string,
     className: PropTypes.string,
+    locale: PropTypes.oneOfType([PropTypes.object, PropTypes.string]),
   };
 
   _makePicker.defaultProps = {
@@ -72,6 +74,7 @@ const makePicker = (PickerComponent) => {
     source: '',
     labelTime: '',
     className: '',
+    locale: undefined,
   };
   return _makePicker;
 };

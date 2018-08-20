@@ -48,6 +48,17 @@ export const NewsEdit = (props) => (
 
 The options prop is passed down to the pickers. Documentation for these options can be found in the [material-ui-pickers documentation](https://material-ui-pickers.firebaseapp.com/demo/datepicker) for the component you're trying to use.
 
+## Utils
+
+If you want to use a date parser utils library other than `date-fns` you can pass the `utils` prop:
+
+```jsx
+import MomentUtils from 'material-ui-pickers/utils/moment-utils';
+
+...
+<DateInput source="date" label="Date" utils={MomentUtils} />
+```
+
 ## Development
 
 You can build sources:

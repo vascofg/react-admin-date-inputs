@@ -16,21 +16,20 @@ const makePicker = (PickerComponent) => {
       const {
         input,
         options,
-        locale,
         label,
         source,
         resource,
         isRequired,
         className,
         meta,
-        utils,
+        providerOptions,
       } = this.props;
 
       const { touched, error } = meta;
 
       return (
         <div className="picker">
-          <MuiPickersUtilsProvider utils={utils} locale={locale}>
+          <MuiPickersUtilsProvider {...providerOptions}>
             <PickerComponent
               {...options}
               label={<FieldTitle
@@ -62,8 +61,10 @@ const makePicker = (PickerComponent) => {
     source: PropTypes.string,
     labelTime: PropTypes.string,
     className: PropTypes.string,
-    locale: PropTypes.oneOfType([PropTypes.object, PropTypes.string]),
-    utils: PropTypes.func,
+    providerOptions: PropTypes.shape({
+      utils: PropTypes.func,
+      locale: PropTypes.oneOfType([PropTypes.object, PropTypes.string]),
+    }),
   };
 
   _makePicker.defaultProps = {
@@ -76,8 +77,10 @@ const makePicker = (PickerComponent) => {
     source: '',
     labelTime: '',
     className: '',
-    locale: undefined,
-    utils: DateFnsUtils,
+    providerOptions: {
+      utils: DateFnsUtils,
+      locale: undefined,
+    },
   };
   return _makePicker;
 };

@@ -1,6 +1,6 @@
 {
   "name": "react-admin-date-inputs",
-  "version": "1.0.20",
+  "version": "1.0.21",
   "description": "react-admin-date-inputs",
   "main": "lib/index.js",
   "author": "vascofg",
@@ -26,6 +26,7 @@
     "babel-preset-react": "~6.24.1",
     "babel-preset-stage-0": "~6.24.1",
     "babel-register": "~6.24.1",
+    "cross-env": "^5.2.0",
     "eslint": "^4.19.1",
     "eslint-config-airbnb": "^16.1.0",
     "eslint-plugin-import": "^2.12.0",
@@ -34,7 +35,7 @@
   },
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "build": "NODE_ENV=production ./node_modules/.bin/babel ./src -d lib"
+    "build": "cross-env NODE_ENV=production ./node_modules/.bin/babel ./src -d lib"
   },
   "keywords": [
     "react",
@@ -48,7 +49,7 @@
     "react-admin": "^2.1.0"
   },
   "dependencies": {
-    "date-fns": "2.0.0-alpha.7",
-    "material-ui-pickers": "^1.0.0-rc.13"
+    "date-fns": "2.0.0-alpha.16",
+    "material-ui-pickers": "1.0.0-rc.17"
   }
 }

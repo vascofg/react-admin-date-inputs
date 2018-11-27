@@ -1,9 +1,8 @@
 import React, { Component } from 'react';
 import PropTypes from 'prop-types';
 import { addField, FieldTitle } from 'ra-core';
-import { DatePicker, TimePicker, DateTimePicker } from 'material-ui-pickers';
-import DateFnsUtils from 'material-ui-pickers/utils/date-fns-utils';
-import MuiPickersUtilsProvider from 'material-ui-pickers/utils/MuiPickersUtilsProvider';
+import { DatePicker, TimePicker, DateTimePicker, MuiPickersUtilsProvider } from 'material-ui-pickers';
+import DateFnsUtils from '@date-io/date-fns';
 
 const makePicker = (PickerComponent) => {
   class _makePicker extends Component {
@@ -44,7 +43,7 @@ const makePicker = (PickerComponent) => {
               ref={(node) => { this.picker = node; }}
               className={className}
               value={input.value ? input.value : null}
-              onChange={date => this.onChange(date)}
+              onChange={this.onChange}
             />
           </MuiPickersUtilsProvider>
         </div>

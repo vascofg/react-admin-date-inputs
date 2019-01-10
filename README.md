@@ -53,7 +53,7 @@ The options prop is passed down to the pickers. Documentation for these options 
 If you want to use a date parser utils library other than `date-fns` or you want a locale other than english, you can pass the `providerOptions` prop:
 
 ```jsx
-import DateFnsUtils from "material-ui-pickers/utils/date-fns-utils";
+import DateFnsUtils from '@date-io/date-fns';
 import MomentUtils from 'material-ui-pickers/utils/moment-utils';
 import frLocale from "date-fns/locale/fr";
 

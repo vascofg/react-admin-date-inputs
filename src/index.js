@@ -6,7 +6,7 @@ import DateFnsUtils from '@date-io/date-fns';
 
 const makePicker = (PickerComponent) => {
   class _makePicker extends Component {
-    onChange(date) {
+    onChange = (date) => {
       this.props.input.onChange(date);
       this.props.input.onBlur();
     }

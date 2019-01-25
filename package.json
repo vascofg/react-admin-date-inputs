@@ -44,12 +44,14 @@
     "aor-component"
   ],
   "peerDependencies": {
-    "react": "^16.3.0",
+    "react": "^16.7.0",
     "prop-types": "^15.6.0",
-    "react-admin": "^2.1.0"
+    "react-admin": "^2.6.2",
+    "ra-core": "^2.6.2"
   },
   "dependencies": {
-    "date-fns": "2.0.0-alpha.16",
-    "material-ui-pickers": "1.0.0-rc.17"
+    "@date-io/date-fns": "^1.0.1",
+    "date-fns": "2.0.0-alpha.21",
+    "material-ui-pickers": "2.1.1"
   }
 }

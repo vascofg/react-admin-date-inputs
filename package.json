@@ -50,7 +50,7 @@
     "react-admin": "^2.1.0"
   },
   "dependencies": {
-    "date-fns": "2.0.0-alpha.16",
-    "material-ui-pickers": "1.0.0-rc.17"
+    "date-fns": "2.0.0-alpha.26",
+    "material-ui-pickers": "1.0.1"
   }
 }

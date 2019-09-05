@@ -13,6 +13,27 @@
     "url": "https://github.com/vascofg/react-admin-date-inputs/issues"
   },
   "license": "MIT",
+  "keywords": [
+    "react",
+    "react-component",
+    "aor-datetime-input",
+    "aor-component"
+  ],
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "build": "cross-env NODE_ENV=production ./node_modules/.bin/babel ./src -d lib"
+  },
+  "dependencies": {
+    "@date-io/date-fns": "^1.3.9",
+    "@material-ui/pickers": "^3.2.5",
+    "date-fns": "2.0.1"
+  },
+  "peerDependencies": {
+    "react": "^16.8.0",
+    "prop-types": "^15.6.0",
+    "react-admin": "^3.0.0-alpha.4",
+    "ra-core": "^3.0.0-alpha.4"
+  },
   "devDependencies": {
     "babel-cli": "^6.24.1",
     "babel-core": "~6.24.1",
@@ -32,26 +53,5 @@
     "eslint-plugin-import": "^2.12.0",
     "eslint-plugin-jsx-a11y": "^6.0.3",
     "eslint-plugin-react": "^7.9.1"
-  },
-  "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1",
-    "build": "cross-env NODE_ENV=production ./node_modules/.bin/babel ./src -d lib"
-  },
-  "keywords": [
-    "react",
-    "react-component",
-    "aor-datetime-input",
-    "aor-component"
-  ],
-  "peerDependencies": {
-    "react": "^16.7.0",
-    "prop-types": "^15.6.0",
-    "react-admin": "^2.6.2",
-    "ra-core": "^2.6.2"
-  },
-  "dependencies": {
-    "@date-io/date-fns": "^1.0.1",
-    "date-fns": "2.0.0-alpha.21",
-    "material-ui-pickers": "2.1.1"
   }
 }

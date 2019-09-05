@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 import PropTypes from 'prop-types';
 import { addField, FieldTitle } from 'ra-core';
 import DateFnsUtils from '@date-io/date-fns';
-import { MuiPickersUtilsProvider, DatePicker, TimePicker, DateTimePicker } from 'material-ui-pickers';
+import { MuiPickersUtilsProvider, DatePicker, TimePicker, DateTimePicker } from '@material-ui/pickers';
 
 const makePicker = (PickerComponent) => {
   class _makePicker extends Component {

@@ -69,7 +69,7 @@ const makePicker = (PickerComponent) => {
 
   _makePicker.defaultProps = {
     input: {},
-    isRequired: 'false',
+    isRequired: false,
     meta: { touched: false, error: false },
     options: {},
     resource: '',

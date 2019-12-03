@@ -44,13 +44,14 @@
     "aor-component"
   ],
   "peerDependencies": {
-    "@material-ui/core": "^1.4.0",
-    "react": "^16.3.0",
-    "prop-types": "^15.6.0",
-    "react-admin": "^2.9.8"
+    "@material-ui/core": "^4.3.3",
+    "react": "^16.9.0",
+    "prop-types": "^15.6.1",
+    "react-admin": "^3.0.0"
   },
   "dependencies": {
-    "date-fns": "^2.0.0-alpha.26",
-    "material-ui-pickers": "^1.0.1"
+    "@date-io/date-fns": "^1.3.11",
+    "@material-ui/pickers": "^3.2.8",
+    "date-fns": "^2.8.1"
   }
 }

@@ -1,6 +1,6 @@
 # react-admin-date-inputs
 
-\<DateInput>, \<TimeInput> and \<DateTimeInput> components for [React-Admin](https://github.com/marmelab/react-admin).
+\<DateInput>, \<TimeInput>, \<DateTimeInput> \<KeyboardDateInput/>, \<KeyboardDateTimeInput/> and <KeyboardTimeInput/> components for [React-Admin](https://github.com/marmelab/react-admin).
 
 ![date-time-picker.gif](date-time-picker.gif)
 
@@ -27,7 +27,7 @@ import {
     TabbedForm,
     FormTab,
 } from 'react-admin'
-import { DateInput, TimeInput, DateTimeInput } from 'react-admin-date-inputs';
+import { DateInput, TimeInput, DateTimeInput, KeyBoardDateInput} from 'react-admin-date-inputs';
 
 export const NewsEdit = (props) => (
   <Edit title={<NewsTitle />} {...props}>

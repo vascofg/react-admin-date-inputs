@@ -4,4 +4,4 @@ node_modules
 .eslintignore
 .eslintrc
 example/
-
+.idea/

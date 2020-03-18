@@ -14,6 +14,10 @@ import {
 } from '@material-ui/pickers';
 import DateFnsUtils from '@date-io/date-fns';
 
+const leftPad = (nb = 2) => value => ('0'.repeat(nb) + value).slice(-nb);
+const leftPad4 = leftPad(4);
+const leftPad2 = leftPad(2);
+
 /**
  * @param {Date} value value to convert
  * @returns {String} A standardized datetime (yyyy-MM-ddThh:mm), to be passed to an <input type="datetime-local" />
@@ -23,10 +27,6 @@ const convertDateToString = (value) => {
         return '';
     }
 
-    const leftPad = (nb = 2) => value => ('0'.repeat(nb) + value).slice(-nb);
-    const leftPad4 = leftPad(4);
-    const leftPad2 = leftPad(2);
-
     const yy = leftPad4(value.getFullYear());
     const MM = leftPad2(value.getMonth() + 1);
     const dd = leftPad2(value.getDate());
@@ -34,6 +34,9 @@ const convertDateToString = (value) => {
     const mm = leftPad2(value.getMinutes());
     return `${yy}-${MM}-${dd}T${hh}:${mm}`;
 };
+
+// yyyy-MM-ddThh:mm
+const dateTimeRegex = /^\d{4}-\d{2}-\d{2}T\d{2}:\d{2}$/;
 
 /**
  * Converts a date from the Redux store, with timezone, to a date string
@@ -51,9 +54,6 @@ const dateTimeFormatter = (value) => {
     if (value instanceof Date) {
         return convertDateToString(value);
     }
-
-    // yyyy-MM-ddThh:mm
-    const dateTimeRegex = /^\d{4}-\d{2}-\d{2}T\d{2}:\d{2}$/;
 
     // valid dates should not be converted
     if (dateTimeRegex.test(value)) {

@@ -27,7 +27,7 @@ import {
     TabbedForm,
     FormTab,
 } from 'react-admin'
-import { DateInput, TimeInput, DateTimeInput } from 'react-admin-date-inputs';
+import { DateInput, DateRangeInput, DateTimeInput, TimeInput } from 'react-admin-date-inputs';
 
 export const NewsEdit = (props) => (
   <Edit title={<NewsTitle />} {...props}>

@@ -1,6 +1,6 @@
-import React, { Fragment, useCallback } from 'react';
+import React, { useCallback } from 'react';
 import PropTypes from 'prop-types';
-import { FieldTitle, useInput } from 'ra-core';
+import { FieldTitle, useInput, useTranslate } from 'ra-core';
 import { LocalizationProvider } from '@material-ui/pickers';
 import { TextField } from '@material-ui/core';
 import DateFnsUtils from '@date-io/date-fns';
@@ -18,6 +18,7 @@ const Picker = ({ Component, ...props }) => {
         onChange
     } = props;
 
+    const translate = useTranslate();
     const { input, meta } = useInput({ source });
     const { touched, error } = meta;
 
@@ -43,6 +44,8 @@ const Picker = ({ Component, ...props }) => {
                     helperText={ touched && error }
                     className={ className }
                     value={ input.value ? new Date(input.value) : null }
+                    clearLabel={ translate('ra.action.clear_input_value') }
+                    cancelLabel={ translate('ra.action.cancel') }
                     onChange={ date => handleChange(date) }
                     onBlur={ () => input.onBlur(input.value ? new Date(input.value).toISOString() : null) }
                     renderInput={ props =>

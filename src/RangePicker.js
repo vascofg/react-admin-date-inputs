@@ -1,6 +1,6 @@
 import React, { Fragment, useCallback } from 'react';
 import PropTypes from 'prop-types';
-import { FieldTitle, useInput } from 'ra-core';
+import { FieldTitle, useInput, useTranslate } from 'ra-core';
 import { DateRangeDelimiter, LocalizationProvider } from '@material-ui/pickers';
 import { TextField } from '@material-ui/core';
 import DateFnsUtils from '@date-io/date-fns';
@@ -20,6 +20,7 @@ const RangePicker = ({ Component, ...props }) => {
         onChange
     } = props;
 
+    const translate = useTranslate();
     const { input: inputStart } = useInput({ source: sourceStart });
     const { input: inputEnd } = useInput({ source: sourceEnd });
 
@@ -52,6 +53,8 @@ const RangePicker = ({ Component, ...props }) => {
                     margin="normal"
                     className={ className }
                     value={ [inputStart.value ? new Date(inputStart.value) : null, inputEnd.value ? new Date(inputEnd.value) : null] }
+                    clearLabel={ translate('ra.action.clear_input_value') }
+                    cancelLabel={ translate('ra.action.cancel') }
                     onChange={ date => handleChange(date) }
                     renderInput={ (startProps, endProps) => (
                         <Fragment>

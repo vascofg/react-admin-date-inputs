@@ -45,13 +45,15 @@
   ],
   "peerDependencies": {
     "@material-ui/core": "^4.3.3",
-    "react": "^16.9.0",
+    "@date-io/core": "^1.3.6",
+    "eslint": "^5.16.0",
     "prop-types": "^15.6.1",
+    "react": "^16.9.0",
     "react-admin": "^3.0.0"
   },
   "dependencies": {
-    "@date-io/date-fns": "^1.3.11",
-    "@material-ui/pickers": "^3.2.8",
+    "@date-io/date-fns": "^2.8.0",
+    "@material-ui/pickers": "^4.0.0-alpha.10",
     "date-fns": "^2.8.1"
   }
 }

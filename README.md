@@ -1,6 +1,6 @@
 # react-admin-date-inputs
 
-\<DateInput>, \<TimeInput> and \<DateTimeInput> components for [React-Admin](https://github.com/marmelab/react-admin).
+\<DateInput>, \<TimeInput>, \<DateTimeInput> and \<DateRangeInput> components for [React-Admin](https://github.com/marmelab/react-admin).
 
 ![date-time-picker.gif](date-time-picker.gif)
 
@@ -27,7 +27,7 @@ import {
     TabbedForm,
     FormTab,
 } from 'react-admin'
-import { DateInput, TimeInput, DateTimeInput } from 'react-admin-date-inputs';
+import { DateInput, DateRangeInput, DateTimeInput, TimeInput } from 'react-admin-date-inputs';
 
 export const NewsEdit = (props) => (
   <Edit title={<NewsTitle />} {...props}>
@@ -37,6 +37,7 @@ export const NewsEdit = (props) => (
         <DateInput source="startDate" label="Start date" options={{ format: 'DD/MM/YYYY' }} />
         <TimeInput source="startTime" label="Start time" options={{ format: 'HH:mm:ss' }} />
         <DateTimeInput source="endDate" label="End time" options={{ format: 'DD/MM/YYYY, HH:mm:ss', ampm: false, clearable: true }} />
+        <DateRangeInput sourceStart="startDate" sourceEnd="endDate" labelStart="Start date" labelEnd="End date"/>
       </FormTab>
     </TabbedForm>
   </Edit>
@@ -50,19 +51,20 @@ The options prop is passed down to the pickers. Documentation for these options 
 
 ## providerOptions prop
 
-If you want to use a date parser utils library other than `date-fns` or you want a locale other than english, you can pass the `providerOptions` prop:
+If you want to use a date adapter library other than `date-fns` or you want a locale other than english, you can pass the `providerOptions` prop:
 
 ```jsx
 import DateFnsUtils from '@date-io/date-fns';
 import MomentUtils from 'material-ui-pickers/utils/moment-utils';
 import frLocale from "date-fns/locale/fr";
+import moment from "moment";
 
 ...
-<DateInput source="date" label="Date using moment" providerOptions={{ utils: MomentUtils }} />
-<DateInput source="date" label="Date in French!" providerOptions={{ utils: DateFnsUtils, locale: frLocale }} />
+<DateInput source="date" label="Date using moment" providerOptions={{ dateAdapter: MomentUtils, dateLibInstance: moment }} />
+<DateInput source="date" label="Date in French!" providerOptions={{ dateAdapter: DateFnsUtils, locale: frLocale }} />
 ```
 
-**NOTE:** When specifying a locale you must also specify the utils, even if it's the default `DateFnsUtils`.
+**NOTE:** When specifying a locale you must also specify the `dateAdapter`, even if it's the default `DateFnsUtils`.
 
 ## Development
 

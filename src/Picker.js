@@ -44,8 +44,8 @@ const Picker = ({ Component, ...props }) => {
                     helperText={ touched && error }
                     className={ className }
                     value={ input.value ? new Date(input.value) : null }
-                    clearLabel={ translate('ra.action.clear_input_value') }
-                    cancelLabel={ translate('ra.action.cancel') }
+                    clearText={ translate('ra.action.clear_input_value') }
+                    cancelText={ translate('ra.action.cancel') }
                     onChange={ date => handleChange(date) }
                     onBlur={ () => input.onBlur(input.value ? new Date(input.value).toISOString() : null) }
                     renderInput={ props =>

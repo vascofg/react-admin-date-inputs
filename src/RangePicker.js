@@ -53,8 +53,8 @@ const RangePicker = ({ Component, ...props }) => {
                     margin="normal"
                     className={ className }
                     value={ [inputStart.value ? new Date(inputStart.value) : null, inputEnd.value ? new Date(inputEnd.value) : null] }
-                    clearLabel={ translate('ra.action.clear_input_value') }
-                    cancelLabel={ translate('ra.action.cancel') }
+                    clearText={ translate('ra.action.clear_input_value') }
+                    cancelText={ translate('ra.action.cancel') }
                     onChange={ date => handleChange(date) }
                     renderInput={ (startProps, endProps) => (
                         <Fragment>

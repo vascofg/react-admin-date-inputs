@@ -68,7 +68,8 @@ Picker.propTypes = {
     labelTime: PropTypes.string,
     className: PropTypes.string,
     providerOptions: PropTypes.shape({
-        utils: PropTypes.func,
+        dateAdapter: PropTypes.func,
+        dateLibInstance: PropTypes.func,
         locale: PropTypes.oneOfType([PropTypes.object, PropTypes.string]),
     }),
     fullWidth: PropTypes.bool,
